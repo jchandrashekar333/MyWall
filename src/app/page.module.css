@@ -97,6 +97,7 @@
   font-weight: 500;
   font-size: 0.95rem;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .loginLink:hover {
@@ -115,11 +116,31 @@
   align-items: center;
   gap: 0.5rem;
   transition: transform 0.2s, background-color 0.2s;
+  white-space: nowrap;
 }
 
 .btnPrimaryBlack:hover {
   background-color: #000;
   transform: scale(1.02);
+}
+
+@media (max-width: 640px) {
+  .navbarWrapper {
+    padding: 1rem;
+  }
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .logoText {
+    display: none;
+  }
+  .navAuth {
+    gap: 0.75rem;
+  }
+  .btnPrimaryBlack {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* MAIN CONTENT */
