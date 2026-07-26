@@ -201,10 +201,10 @@
 /* About Block */
 .aboutText {
   font-size: 1.125rem;
-  line-height: 1.8;
+  line-height: 1.6;
   white-space: pre-wrap;
-  word-break: break-word;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
+  color: var(--text-secondary);
 }
 
 /* Skills Block */
@@ -1716,6 +1716,10 @@
     padding: 1.5rem 1rem;
   }
   
+  .aboutText {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
   /* Hero Banner Aspect Ratio */
   .banner {
     aspect-ratio: 16 / 9;
