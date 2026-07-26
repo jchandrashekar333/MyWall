@@ -30,8 +30,7 @@ export default async function PublicPage({ params }: { params: Promise<{ handle:
     .eq('user_id', user.id)
     .single()
 
-  const fs = require('fs')
-  fs.appendFileSync('debug.log', `[PublicPage] handle: ${handle}, user: ${JSON.stringify(user)}, userError: ${JSON.stringify(userError)}, page: ${JSON.stringify(page)}, pageError: ${JSON.stringify(pageError)}\n`)
+
 
   if (!page || !page.published) {
     // In a real app, you might want to allow the owner to see it even if unpublished,
