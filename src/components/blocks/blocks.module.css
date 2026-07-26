@@ -1681,3 +1681,69 @@
   pointer-events: none;
   transform: translateY(45px) scale(0.85);
 }
+
+/* =========================================
+   Mobile Optimization (@media max-width: 640px)
+   ========================================= */
+@media (max-width: 640px) {
+  /* Global section padding */
+  .section {
+    padding: 1.5rem 1rem;
+  }
+  
+  /* Hero Banner Aspect Ratio */
+  .banner {
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+  }
+  
+  /* Vinyl Music Player - stack vertically */
+  .vinylContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.25rem;
+    padding: 1.5rem 1rem;
+  }
+  .equalizer {
+    justify-content: center;
+  }
+  
+  /* Marquee - smaller font */
+  .marqueeSkillItem {
+    font-size: 2rem;
+  }
+  .skillsMarqueeTrack {
+    gap: 2rem;
+  }
+  
+  /* Tweet Card */
+  .tweetCard {
+    padding: 1.25rem;
+  }
+  .tweetText {
+    font-size: 1rem;
+  }
+  .tweetMetrics {
+    gap: 1rem;
+    justify-content: space-between;
+  }
+  
+  /* Swipeable Deck */
+  .testimonialDeck {
+    height: 280px; /* give a bit more vertical room for wrapping text */
+  }
+  .testimonialDeckCard {
+    padding: 1.5rem;
+  }
+  
+  /* Link Card - text size adjustments */
+  .linkLabel {
+    font-size: 0.95rem;
+  }
+  .linkDescription {
+    font-size: 0.8rem;
+  }
+  .linkCard {
+    padding: 1rem;
+  }
+}
