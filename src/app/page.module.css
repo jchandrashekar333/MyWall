@@ -160,6 +160,10 @@
     gap: 2rem;
     padding: 2rem;
   }
+  
+  .heroVisuals {
+    display: none;
+  }
 }
 
 /* LEFT COMPONENT - CSS MOCKUPS */
