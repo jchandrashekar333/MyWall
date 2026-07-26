@@ -1,0 +1,441 @@
+.editor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.blockSection {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.blockSection:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.blockHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.blockHeader:hover {
+  background-color: var(--bg-secondary);
+}
+
+.blockTitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.blockEditor {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.inputGroup input,
+.inputGroup textarea,
+.blockEditor textarea {
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-family: inherit;
+}
+
+.inputGroup textarea {
+  resize: vertical;
+}
+
+.helpText {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #10b981;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.itemCard {
+  border: 1px solid #e5e7eb;
+  background-color: #f9fafb;
+  border-radius: 6px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.itemTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.deleteBtn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.deleteBtn:hover {
+  background-color: #fee2e2;
+}
+
+.addBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #f3f4f6;
+  border: 1px dashed #d1d5db;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.addBtn:hover {
+  background-color: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+/* Social Editor Styles */
+.socialEditorWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #fdf2f8; /* light pink tint */
+  min-height: 100%;
+}
+
+.socialEditorHeaderBanner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, #fbcfe8 0%, #f472b6 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  color: #831843;
+}
+
+.socialEditorHeaderBanner h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.socialEditorHeaderBanner p {
+  margin: 0.25rem 0 0 0;
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.socialEditor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0 1rem 2rem;
+}
+
+.socialBlockSection {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  border: 1px solid #fce7f3;
+}
+
+.socialBlockHeader {
+  margin-bottom: 1.25rem;
+}
+
+.socialBlockTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.socialBlockEditor {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.socialProfileSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.socialInputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.socialInputGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.socialInput, .socialTextarea, .socialInputLinkTitle, .socialInputUrl, .socialIconSelect, .socialInputUrlSmall {
+  padding: 0.75rem 1rem;
+  border: 2px solid #f1f5f9;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.2s;
+  background: #f8fafc;
+}
+
+.socialInput:focus, .socialTextarea:focus, .socialInputLinkTitle:focus, .socialInputUrl:focus, .socialIconSelect:focus, .socialInputUrlSmall:focus {
+  outline: none;
+  border-color: #f472b6;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.1);
+}
+
+.socialTextarea {
+  resize: vertical;
+}
+
+.socialLinkCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.2s;
+}
+
+.socialLinkCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.socialLinkHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socialDeleteBtn, .socialDeleteBtnIcon {
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.socialDeleteBtn:hover, .socialDeleteBtnIcon:hover {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.socialUrlRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  border: 2px solid #f1f5f9;
+  border-radius: 10px;
+  padding-left: 0.75rem;
+}
+
+.socialUrlRow:focus-within {
+  border-color: #f472b6;
+}
+
+.socialUrlRow .socialInputUrl {
+  border: none;
+  background: transparent;
+  padding: 0.75rem 0.5rem;
+  flex: 1;
+}
+
+.socialUrlRow .socialInputUrl:focus {
+  box-shadow: none;
+}
+
+.socialAddBtn {
+  background: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.875rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.socialAddBtn:hover {
+  background: #111827;
+}
+
+.socialIconsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.socialIconCard {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.socialIconHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.socialIconSelect {
+  flex: 1;
+}
+
+.socialAddBtnOutline {
+  background: white;
+  color: #1f2937;
+  border: 2px dashed #cbd5e1;
+  border-radius: 10px;
+  padding: 0.875rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.socialAddBtnOutline:hover {
+  border-color: #94a3b8;
+  background: #f8fafc;
+}
+
+.socialHelpText {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.iconBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem;
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
+  color: var(--text-secondary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.iconBtn:hover {
+  background-color: var(--card-border);
+  color: var(--text-primary);
+}

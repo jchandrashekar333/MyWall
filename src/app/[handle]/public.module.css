@@ -1,0 +1,10 @@
+.notPublished {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  color: #4b5563;
+  text-align: center;
+  font-family: sans-serif;
+}

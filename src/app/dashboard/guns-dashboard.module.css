@@ -1,0 +1,473 @@
+.dashboardRoot {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background-color: #121016; /* very dark, slightly purple tint */
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 250px;
+  background-color: #1a1721; /* slightly lighter than root */
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem 1rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  overflow-y: auto;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  padding: 0 0.5rem;
+}
+
+.logoIcon {
+  font-size: 1.25rem;
+  color: #a855f7; /* purple */
+}
+
+.logoText {
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: #25222d;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.searchIcon {
+  color: #888;
+  margin-right: 0.5rem;
+}
+
+.searchBar input {
+  background: transparent;
+  border: none;
+  color: #eee;
+  font-size: 0.85rem;
+  width: 100%;
+  outline: none;
+}
+
+.searchBar input::placeholder {
+  color: #666;
+}
+
+.shortcutKey {
+  font-size: 0.65rem;
+  background-color: #1a1721;
+  padding: 0.15rem 0.3rem;
+  border-radius: 4px;
+  color: #888;
+  white-space: nowrap;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: left;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navItem:hover {
+  background-color: #25222d;
+  color: #fff;
+}
+
+.navItem.active {
+  background: linear-gradient(90deg, rgba(168, 85, 247, 0.1) 0%, rgba(168, 85, 247, 0.0) 100%);
+  color: #fff;
+  border-left: 3px solid #a855f7;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.navSubMenu {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2.5rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 0.75rem;
+  margin-bottom: 0.5rem;
+  margin-top: -0.25rem;
+}
+
+.navSubMenu button {
+  background: transparent;
+  border: none;
+  color: #888;
+  text-align: left;
+  padding: 0.4rem 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.navSubMenu button:hover {
+  color: #d8b4fe;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.sidebarFooter {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.supportCard {
+  background-color: #25222d;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  text-align: left;
+  cursor: pointer;
+}
+
+.supportText {
+  font-size: 0.75rem;
+  color: #aaa;
+  margin-bottom: 0.75rem;
+}
+
+.helpCenterBtn {
+  background-color: #3b2856;
+  color: #d8b4fe;
+  font-size: 0.85rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  font-weight: 500;
+}
+
+.myPageBtn {
+  background-color: #3b2856;
+  color: #d8b4fe;
+  font-size: 0.85rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.shareBtn {
+  background: transparent;
+  border: none;
+  color: #d8b4fe;
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.userProfileBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background-color: #1a1721;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  background-color: #a855f7;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.userInfo {
+  flex: 1;
+}
+
+.userHandle {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.userUid {
+  font-size: 0.7rem;
+  color: #888;
+}
+
+.moreOptions {
+  background: transparent;
+  border: none;
+  color: #888;
+  cursor: pointer;
+}
+
+.logoutForm {
+  margin-top: 0.5rem;
+}
+
+.logoutActionBtn, .switchModeBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #25222d;
+  color: #aaa;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.6rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 0.5rem;
+}
+
+.logoutActionBtn:hover {
+  background-color: #3b2856;
+  color: #d8b4fe;
+}
+.switchModeBtn:hover {
+  background-color: #3b2856;
+  color: #d8b4fe;
+}
+
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.topHeader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1.5rem 2rem;
+  gap: 1.5rem;
+}
+
+.headerLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.headerLinks a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.headerLinks a:hover {
+  color: #fff;
+}
+
+.publishToggle {
+  background-color: #3b2856;
+  color: #d8b4fe;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.publishToggle:hover {
+  background-color: #a855f7;
+  color: #fff;
+}
+
+.saveStatus {
+  color: #888;
+  font-size: 0.85rem;
+  width: 60px;
+}
+
+.pageContent {
+  padding: 0 3rem 3rem 3rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Account View Layout */
+.statsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.statCard {
+  background-color: #1a1721;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.statCard:nth-child(1), .statCard:nth-child(2) {
+  background: linear-gradient(135deg, #2a1a3a 0%, #1a1721 100%);
+}
+
+.statHeader {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.statSub {
+  font-size: 0.75rem;
+  color: #888;
+}
+
+.twoColLayout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.panelCard {
+  background-color: #1a1721;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.progressHeader {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressHeader::after {
+  content: '0% completed';
+  color: #888;
+}
+
+.progressBar {
+  height: 8px;
+  background-color: #25222d;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #a855f7;
+}
+
+.alertBox {
+  display: flex;
+  gap: 1rem;
+  background-color: rgba(245, 158, 11, 0.1); /* warning orange */
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.alertIcon {
+  font-size: 1.25rem;
+}
+
+.alertTitle {
+  font-weight: 600;
+  color: #fcd34d;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.alertDesc {
+  color: #aaa;
+  font-size: 0.85rem;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.cardDesc {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.actionRowBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #25222d;
+  color: #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+  transition: all 0.2s;
+}
+
+.actionRowBtn:hover {
+  background-color: #3b2856;
+  color: #fff;
+  border-color: rgba(168, 85, 247, 0.3);
+}
+
+/* Customize View Layout */
+.customizeView {
+  height: 100%;
+}

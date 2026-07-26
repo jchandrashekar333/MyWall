@@ -1,0 +1,152 @@
+.bentoGrid {
+  min-height: 100vh;
+  padding: 24px;
+  background-color: #f0fdfa;
+  background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%);
+  background-attachment: fixed;
+  color: white;
+}
+
+.tile {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tile:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.15);
+}
+
+.contentWrapper {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* Bio Tile */
+.bioTile {
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
+}
+.bioHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.bioAvatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  object-fit: cover;
+}
+.bioName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.bioText {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.8);
+}
+
+/* Link Tile */
+.linkTile {
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(236, 72, 153, 0.2));
+}
+.linkTile .contentWrapper {
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.linkIconWrapper {
+  background: rgba(255,255,255,0.2);
+  padding: 16px;
+  border-radius: 16px;
+}
+.linkLabel {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Project Tile */
+.projectTile {
+  background: linear-gradient(to top right, rgba(16, 185, 129, 0.2), rgba(59, 130, 246, 0.2));
+}
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.projectImpact {
+  font-size: 1.125rem;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Pinned Favorite Tile */
+.pinnedTile {
+  background: linear-gradient(to bottom, rgba(245, 158, 11, 0.2), rgba(239, 68, 68, 0.2));
+}
+.pinnedLabel {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 8px;
+}
+.pinnedValue {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* Contact Tile */
+.contactTile {
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(139, 92, 246, 0.2));
+}
+.contactLabel {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.contactEmail {
+  display: inline-block;
+  background: white;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+/* Gallery Tile */
+.galleryTile {
+  background: rgba(255,255,255,0.1);
+}
+.galleryPlaceholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  font-size: 1.25rem;
+}

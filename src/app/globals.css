@@ -1,0 +1,82 @@
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Georgia', serif;
+  
+  /* Default Theme (Professional) */
+  --bg-color: #ffffff;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --accent-color: #111827;
+  --accent-text: #ffffff;
+  --border-radius: 4px;
+  --card-bg: #f9fafb;
+  --card-border: #e5e7eb;
+  
+  --font-heading: var(--font-serif);
+  --font-body: var(--font-sans);
+}
+
+[data-theme='social'] {
+  --bg-color: #0f172a;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-color: #8b5cf6;
+  --accent-text: #ffffff;
+  --border-radius: 14px;
+  --card-bg: #1e293b;
+  --card-border: #334155;
+  
+  --font-heading: var(--font-sans);
+  --font-body: var(--font-sans);
+}
+
+[data-theme='dark'] {
+  --bg-color: #09090b;
+  --text-primary: #fafafa;
+  --text-secondary: #a1a1aa;
+  --accent-color: #3b82f6;
+  --accent-text: #ffffff;
+  --border-radius: 8px;
+  --card-bg: #18181b;
+  --card-border: #27272a;
+  
+  --font-heading: var(--font-sans);
+  --font-body: var(--font-sans);
+}
+
+[data-theme='fun'] {
+  --bg-color: #fdf2f8;
+  --text-primary: #1e1b4b;
+  --text-secondary: #6b7280;
+  --accent-color: #ec4899;
+  --accent-text: #ffffff;
+  --border-radius: 24px;
+  --card-bg: #ffffff;
+  --card-border: #fbcfe8;
+  
+  --font-heading: var(--font-sans);
+  --font-body: var(--font-sans);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
