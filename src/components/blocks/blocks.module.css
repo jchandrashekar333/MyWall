@@ -139,7 +139,7 @@
   font-weight: 600;
   margin: 0 0 1.25rem;
   white-space: pre-wrap;
-  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Row 4: Action buttons row (Send a message + Share icon) */
@@ -447,6 +447,7 @@
   color: var(--text-secondary);
   margin: 0;
   white-space: pre-wrap;
+  overflow-wrap: break-word;
 }
 
 /* Achievements Block */
