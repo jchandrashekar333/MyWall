@@ -1533,7 +1533,23 @@ export default function BlockEditor({ block, onContentChange, theme }: BlockEdit
       </div>
       
       <div style={{ padding: '1.5rem', flex: 1, overflowY: 'auto' }}>
-        {activeTab === 'content' && renderBlockEditor(block)}
+        {activeTab === 'content' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {block.type !== 'hero' && block.type !== 'links' && block.type !== 'badge' && (
+              <div className={styles.inputGroup} style={{ paddingBottom: '1.5rem', borderBottom: '1px solid #e5e7eb' }}>
+                <label>Section Title (Optional)</label>
+                <input
+                  type="text"
+                  value={block.content.title !== undefined ? block.content.title : ''}
+                  onChange={e => onContentChange(block.id, { ...block.content, title: e.target.value })}
+                  placeholder={`e.g. My ${block.type.charAt(0).toUpperCase() + block.type.slice(1)}`}
+                />
+                <span style={{ fontSize: '0.75rem', color: '#64748b', marginTop: '0.25rem' }}>Leave blank to use the default title, or enter a space to hide it.</span>
+              </div>
+            )}
+            {renderBlockEditor(block)}
+          </div>
+        )}
         {activeTab === 'design' && <DesignSettingsForm block={block} onContentChange={onContentChange} />}
         {activeTab === 'advanced' && <div style={{ color: '#64748b', textAlign: 'center', padding: '2rem' }}>Advanced settings coming soon</div>}
       </div>
