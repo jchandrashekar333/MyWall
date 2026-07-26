@@ -36,6 +36,29 @@
   background: #d4d4d8;
 }
 
+.muteToggleBtn {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s;
+}
+
+.muteToggleBtn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
 /* Profile body below the banner */
 .heroBody {
   max-width: 680px;

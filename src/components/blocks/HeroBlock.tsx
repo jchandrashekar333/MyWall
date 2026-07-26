@@ -1,10 +1,14 @@
 'use client'
 
+import React, { useState, useRef } from 'react'
 import styles from './blocks.module.css'
 import { HeroContent } from '@/types/portfolio'
-import { MessageSquare, Share2 } from 'lucide-react'
+import { MessageSquare, Share2, Volume2, VolumeX } from 'lucide-react'
 
 export function HeroBlock({ data }: { data: HeroContent }) {
+  const [isMuted, setIsMuted] = useState(true)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
   const handleShare = () => {
     if (navigator.share) {
       navigator.share({
@@ -17,19 +21,36 @@ export function HeroBlock({ data }: { data: HeroContent }) {
     }
   }
 
+  const toggleMute = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted
+      setIsMuted(!isMuted)
+    }
+  }
+
   return (
     <section className={styles.heroWrapper}>
       {/* Banner: video or image, full-width black background */}
       <div className={styles.banner}>
         {data.bannerUrl && data.bannerType === 'video' ? (
-          <video
-            className={styles.bannerMedia}
-            src={data.bannerUrl}
-            autoPlay
-            loop
-            muted
-            playsInline
-          />
+          <>
+            <video
+              ref={videoRef}
+              className={styles.bannerMedia}
+              src={data.bannerUrl}
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
+            <button 
+              className={styles.muteToggleBtn} 
+              onClick={toggleMute}
+              title={isMuted ? "Unmute" : "Mute"}
+            >
+              {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+            </button>
+          </>
         ) : data.bannerUrl && data.bannerType === 'image' ? (
           <img className={styles.bannerMedia} src={data.bannerUrl} alt="Banner" />
         ) : (
