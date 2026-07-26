@@ -210,7 +210,7 @@ export default function DashboardClient({ user, page, initialBlocks, initialWidg
       </div>
 
       <main className={styles.main}>
-        <SidebarNav activeTab={activeNavTab} setActiveTab={setActiveNavTab} />
+        <SidebarNav activeTab={activeNavTab} setActiveTab={setActiveNavTab} className={activeTab === 'preview' ? styles.hiddenOnMobile : ''} />
         
         <>
           {activeNavTab === 'theme' ? (
@@ -253,16 +253,18 @@ export default function DashboardClient({ user, page, initialBlocks, initialWidg
           ) : (
             <>
               {activeNavTab === 'sections' && (
-                <SectionsList 
-                  blocks={[...blocks].sort((a, b) => a.sort_order - b.sort_order)}
-                  selectedBlockId={selectedBlockId}
-                  setSelectedBlockId={setSelectedBlockId}
-                  onToggleBlock={handleToggleBlock}
-                  onDragEnd={handleDragEnd}
-                />
+                <div className={activeTab === 'preview' ? styles.hiddenOnMobile : ''}>
+                  <SectionsList 
+                    blocks={[...blocks].sort((a, b) => a.sort_order - b.sort_order)}
+                    selectedBlockId={selectedBlockId}
+                    setSelectedBlockId={setSelectedBlockId}
+                    onToggleBlock={handleToggleBlock}
+                    onDragEnd={handleDragEnd}
+                  />
+                </div>
               )}
               
-              <div className={styles.previewPane}>
+              <div className={`${styles.previewPane} ${activeTab === 'editor' ? styles.hiddenOnMobile : ''}`}>
                 <div className={styles.previewHeader}>
                   <button 
                     className={`${styles.previewToggleBtn} ${previewMode === 'mobile' ? styles.active : ''}`}
@@ -284,7 +286,7 @@ export default function DashboardClient({ user, page, initialBlocks, initialWidg
                 </div>
               </div>
 
-              <div className={styles.editPane}>
+              <div className={`${styles.editPane} ${activeTab === 'preview' ? styles.hiddenOnMobile : ''}`}>
                 {selectedBlockId && activeNavTab === 'sections' ? (
                   <>
                     <div style={{ padding: '1.5rem', borderBottom: '1px solid #e5e7eb', position: 'sticky', top: 0, background: 'white', zIndex: 10 }}>

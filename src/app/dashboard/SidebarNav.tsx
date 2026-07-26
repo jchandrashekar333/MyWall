@@ -7,9 +7,10 @@ import { Layout, Palette, FileText, BarChart2, Settings, HelpCircle, Bell, Spark
 interface SidebarNavProps {
   activeTab: string
   setActiveTab: (tab: string) => void
+  className?: string
 }
 
-export default function SidebarNav({ activeTab, setActiveTab }: SidebarNavProps) {
+export default function SidebarNav({ activeTab, setActiveTab, className = '' }: SidebarNavProps) {
   const tabs = [
     { id: 'sections', label: 'Sections', icon: Layout },
     { id: 'theme', label: 'Theme', icon: Palette },
@@ -24,7 +25,7 @@ export default function SidebarNav({ activeTab, setActiveTab }: SidebarNavProps)
   ]
 
   return (
-    <div className={styles.sidebarNav}>
+    <div className={`${styles.sidebarNav} ${className}`}>
       <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '1rem', width: '100%' }}>
         {tabs.map(tab => {
           const Icon = tab.icon

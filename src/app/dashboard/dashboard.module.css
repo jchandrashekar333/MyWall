@@ -296,12 +296,40 @@
 
 
 @media (max-width: 768px) {
-  .mobileTabs {
-    display: flex;
+  .mobileTabs { display: flex; }
+  
+  .main { 
+    flex-direction: column; 
+    overflow-y: auto; 
   }
   
-  .editorPane {
-    max-width: 100%;
+  .sidebarNav {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 0.75rem;
+    gap: 1.5rem;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    justify-content: flex-start;
+    flex-shrink: 0;
+  }
+  
+  .sectionsPane {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    flex: none;
+    max-height: 400px;
+  }
+  
+  .editPane {
+    width: 100%;
+    height: auto;
+    border-left: none;
+    flex: none;
   }
 
   .previewPane {
@@ -313,10 +341,10 @@
     border-radius: 0;
     border: none;
     box-shadow: none;
-    min-height: 100vh;
+    height: calc(100vh - 120px);
   }
 
   .hiddenOnMobile {
-    display: none;
+    display: none !important;
   }
 }
