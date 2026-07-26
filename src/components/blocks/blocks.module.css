@@ -207,6 +207,9 @@
   color: var(--text-secondary);
 }
 
+.fontSizeSmall { font-size: 0.95rem; }
+.fontSizeLarge { font-size: 1.25rem; }
+
 /* Skills Block */
 .skillsContainer {
   display: flex;
@@ -1720,6 +1723,8 @@
     font-size: 1rem;
     line-height: 1.5;
   }
+  .aboutText.fontSizeSmall { font-size: 0.85rem; }
+  .aboutText.fontSizeLarge { font-size: 1.125rem; }
   /* Hero Banner Aspect Ratio */
   .banner {
     aspect-ratio: 16 / 9;

@@ -74,6 +74,7 @@ export interface HeroContent {
 export interface AboutContent {
   title?: string
   text: string
+  fontSize?: 'small' | 'medium' | 'large'
 }
 
 export interface SkillsContent {

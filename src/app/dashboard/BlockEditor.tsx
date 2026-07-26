@@ -213,6 +213,17 @@ export default function BlockEditor({ block, onContentChange, theme }: BlockEdit
       case 'about':
         return (
           <div className={styles.blockEditor}>
+            <div className={styles.inputGroup}>
+              <label>Font Size</label>
+              <select 
+                value={block.content.fontSize || 'medium'} 
+                onChange={e => onContentChange(block.id, { ...block.content, fontSize: e.target.value })}
+              >
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
             <div className={styles.inputGroup} style={{ marginBottom: '4rem' }}>
               <label>About Me Text</label>
               <RichTextEditor
